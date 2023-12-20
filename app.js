@@ -27,7 +27,16 @@ clipboardEl.addEventListener("click", () => {
   textarea.select();
   document.execCommand("copy");
   textarea.remove();
-  alert("Password has been copied to clipboard");
+
+  Toastify({
+    text: "Password has been copied to clipboard",
+    className: "success",
+    style: {
+      background:
+        "linear-gradient(to right, rgb(111, 143, 226), rgb(88, 40, 246))",
+    },
+    position: "left",
+  }).showToast();
 });
 
 generateEl.addEventListener("click", () => {
